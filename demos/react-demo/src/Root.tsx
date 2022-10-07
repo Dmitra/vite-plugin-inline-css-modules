@@ -1,10 +1,12 @@
 import React from 'react'
 import { css } from 'vite-plugin-inline-css-modules'
 
-const classes = css`
-  .root {
-    background-color: #1f1e33;
-  }
+const styles = css`
+  background-color: azure;
 `
 
-export const Root = () => <div className={classes.root}>Hello world</div>
+const styles2 = css`
+  color: aqua;
+`
+
+export const Root = () => <div className={`${styles} ${styles2}`}>Hello world</div>
