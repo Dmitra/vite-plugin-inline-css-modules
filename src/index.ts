@@ -62,7 +62,7 @@ export default (config: PluginConfig = {}): Plugin => {
           cnt++
           filename = `${baseFilename}-${cnt}.module.${ext}`
         }
-        cssModules[filename] = `.${variableName} { ${css} }`
+        cssModules[filename] = `:global { :local(.${variableName}) { ${css} } }`
         return `import { ${variableName} } from "virtual:inline-css-modules/${filename}"\n`
       })
       return {
